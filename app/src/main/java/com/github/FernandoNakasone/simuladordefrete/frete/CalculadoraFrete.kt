@@ -7,18 +7,19 @@ class CalculadoraFrete {
 
     fun calcular(
         tipo: TipoFrete,
-        pesoKg: Double
+        pesoKg: Double,
+        distanciaKm: Double
     ) : ResultadoFrete {
 
         val resultado = when(tipo){
 
             TipoFrete.ECONOMICO -> ResultadoFrete(
-                valor = 10 + 3 * pesoKg,
+                valor = 8 + 3 * pesoKg + 0.10 * distanciaKm,
                 prazoDias = 5
             )
 
             TipoFrete.EXPRESSO -> ResultadoFrete(
-                valor = 20 + 5 * pesoKg,
+                valor = 20 + 5 * pesoKg  + 0.25 * distanciaKm,
                 prazoDias = 2
             )
 
